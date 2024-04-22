@@ -1,4 +1,4 @@
- terraform {
+terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -8,14 +8,14 @@
 }
 
 provider "aws" {
-  region  = "us-east-1"
+  region = "us-east-1"
 }
 
 resource "aws_s3_bucket" "s3Bucket" {
-     bucket = "team8-test"
-     acl       = "public-read"
+  bucket = "team8-test"
+  acl    = "public-read"
 
-     policy  = <<EOF
+  policy = <<EOF
 {
      "id" : "MakePublic",
    "version" : "2012-10-17",
@@ -32,8 +32,8 @@ resource "aws_s3_bucket" "s3Bucket" {
   }
 EOF
 
-   website {
-       index_document = "index.html"
-   }
+  website {
+    index_document = "index.html"
+  }
 }
 
